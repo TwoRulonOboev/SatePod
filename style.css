@@ -7,32 +7,37 @@
 
 body {
     font-family: Arial, sans-serif;
-    background-color: #f8f8f8;
+    background-color: #ffffff;
 }
 
 /* Шапка */
 header {
-    background-color: #fff;
-    padding: 20px 0;
+    background-color: #ffffffce;
+    top: 10px;
+    padding: 10px;
+    margin-left: 20%;
+    margin-right: 20%;
+    border-radius: 50px;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    position: fixed;
+    z-index: 5;
 }
 
 .header_Logo {
-    width: 10%;
+    width: 6%;
     margin-left: 5%;
+    border-radius: 50px;
 }
 
 nav {
     display: flex;
     list-style: none;
     margin-right: 5%;
+    gap: 20px;
 }
 
-nav li {
-    margin-right: 20px;
-}
 
 nav a {
     text-decoration: none;
@@ -45,12 +50,26 @@ nav a {
     color: #fff;
     padding: 10px 20px;
     border: none;
-    border-radius: 5px;
+    border-radius: 50px;
     cursor: pointer;
     margin-right: 5%;
 }
 
+.header_but a{
+    color: #ddd;
+    text-decoration: none;
+}
+
 /* Основной контент */
+.main_top{
+    position: absolute;
+    top: 75%;
+    left: 5%;
+    background-color: #ffffffa1;
+    border-radius: 30px;
+    padding: 2%;
+}
+
 .main {
     padding: 50px;
     text-align: center;
@@ -85,8 +104,9 @@ nav a {
 }
 
 .mp4_top {
+
     width: 100%;
-    height: 300px;
+    height: 1000px;
     margin-top: 20px;
     border-radius: 10px;
 }
@@ -96,17 +116,17 @@ nav a {
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    height: 600px;
+
 }
 
 .section_top img{
-    width: 400px;
-    height: 600px;
+    width: 100%;
+    height: 100%;
 }
 
 .slider {
     width: 100%;
-    height: 200px;
+    height: 600px;
     overflow: hidden;
     position: relative;
     margin: 0 auto;
@@ -174,6 +194,8 @@ nav a {
 
 /* Текстовый раздел */
 .section_text {
+    margin-left: 20%;
+    margin-right: 20%;
     display: flex;
     justify-content: space-around;
     padding: 30px;
@@ -185,9 +207,10 @@ nav a {
 }
 
 .section_text_item p {
-    font-size: 18px;
+
     line-height: 1.5;
-    margin-bottom: 10px;
+    font-weight: bold;
+    font-size: 18px;
 }
 
 /* Раздел с подкастами */
@@ -296,7 +319,7 @@ nav a {
 
 .mp4_butom {
     width: 100%;
-    height: 300px;
+    height: 1000px;
     border-radius: 10px;
 }
 
@@ -397,6 +420,8 @@ nav a {
 .section_form {
     padding: 30px;
     text-align: center;
+    margin-left: 30%;
+    margin-right: 30%;
 }
 
 .section_form_zag {
@@ -442,8 +467,14 @@ nav a {
 }
 
 .section_map_text {
+    position: absolute;
+    background-color: #ffffffcb;
+    margin-top: 6%;
+    padding: 20px;
+    border-radius: 50px;
     text-align: left;
     margin-bottom: 20px;
+
 }
 
 .section_map_text p {
