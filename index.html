@@ -15,7 +15,9 @@
             <li><a href="#section_podk">Подкасты</a></li>
             <li><a href="#otzivi">Отзывы</a></li>
         </nav>
-        <button class="header_but"><a href="#questions">Связаться с нами</a></button>
+        <button class="header_but" onclick="window.location.href='regist.html'">
+            <a>Зарегистрироваться</a>
+          </button>
     </header>
     
 
@@ -38,28 +40,14 @@
 
     <section class="section_top">
         <div class="slider">
-            <div class="slide">
-                <img src="src/3/1.jpeg" alt="">
-            </div>
-            <div class="slide">
-                <img src="src/3/2.jpeg" alt="">
-            </div>
-            <div class="slide">
-                <img src="src/3/3.jpeg" alt="">
-            </div>
-            <div class="slide">
-                <img src="src/3/4.jpeg" alt="">
-            </div>
-            <div class="slide">
-                <img src="src/3/5.jpeg" alt="">
-            </div>
-            <div class="slide">
-                <img src="src/3/6.jpeg" alt="">
-            </div>
-            <div class="slide">
-                <img src="src/3/7.jpeg" alt="">
-            </div>
-        </div>
+            <img src="src/3/1.jpeg" alt="Image 1">
+            <img src="src/3/2.jpeg" alt="Image 2">
+            <img src="src/3/3.jpeg" alt="Image 3">
+            <img src="src/3/4.jpeg" alt="Image 4">
+            <img src="src/3/5.jpeg" alt="Image 5">
+            <img src="src/3/6.jpeg" alt="Image 6">
+            <img src="src/3/7.jpeg" alt="Image 7">
+          </div>
     </section>
 
     <section class="section_text">
@@ -207,39 +195,39 @@
 
     <section class="section_questions">
         <div class="container">
-            <h2 class="section_questions_zag">Часто задаваемые вопросы</h2>
-            <div class="question">
-              <h3 class="question_zag">Как начать создание подкаста?</h3>
-              <div class="answer">
-                Для начала выберите тему и пригласите гостей!
-              </div>
-            </div>
-            <div class="question">
-              <h3 class="question_zag">Могу ли я редактировать подкаст после публикации?</h3>
-              <div class="answer">
-                Конечно! Воспользуйтесь нашим редактором и вносите изменения в любое время.
-              </div>
-            </div>
-            <div class="question">
-              <h3 class="question_zag">Как мне поделиться своим подкастом с друзьями?</h3>
-              <div class="answer">
-                Просто скопируйте ссылку на ваш эпизод и отправьте им!
-              </div>
-            </div>
-            <div class="question">
-              <h3 class="question_zag">Есть ли возможность монетизации подкаста?</h3>
-              <div class="answer">
-                Да, у нас есть партнерская программа для монетизации вашего контента!
-              </div>
-            </div>
-            <div class="question">
-              <h3 class="question_zag">Как долго обрабатывается подача на публикацию?</h3>
-              <div class="answer">
-                Обычно мы рассматриваем заявки в течение 24 часов.
-              </div>
+          <h2 class="section_questions_zag">Часто задаваемые вопросы</h2>
+          <div class="question">
+            <h3 class="question_zag">Как начать создание подкаста?</h3>
+            <div class="answer">
+              Для начала выберите тему и пригласите гостей!
             </div>
           </div>
-    </section>
+          <div class="question">
+            <h3 class="question_zag">Могу ли я редактировать подкаст после публикации?</h3>
+            <div class="answer">
+              Конечно! Воспользуйтесь нашим редактором и вносите изменения в любое время.
+            </div>
+          </div>
+          <div class="question">
+            <h3 class="question_zag">Как мне поделиться своим подкастом с друзьями?</h3>
+            <div class="answer">
+              Просто скопируйте ссылку на ваш эпизод и отправьте им!
+            </div>
+          </div>
+          <div class="question">
+            <h3 class="question_zag">Есть ли возможность монетизации подкаста?</h3>
+            <div class="answer">
+              Да, у нас есть партнерская программа для монетизации вашего контента!
+            </div>
+          </div>
+          <div class="question">
+            <h3 class="question_zag">Как долго обрабатывается подача на публикацию?</h3>
+            <div class="answer">
+              Обычно мы рассматриваем заявки в течение 24 часов.
+            </div>
+          </div>
+        </div>
+      </section>
 
     <section class="section_ico">
         <p></p>
@@ -289,12 +277,50 @@
 
     <script>
         const questions = document.querySelectorAll('.question');
-        
+
         questions.forEach(question => {
-          question.addEventListener('click', () => {
+        question.addEventListener('click', () => {
             question.classList.toggle('active');
-          });
+            const answer = question.querySelector('.answer');
+            if (question.classList.contains('active')) {
+            answer.style.display = 'block';
+            } else {
+            answer.style.display = 'none';
+            }
         });
+        });
+    </script>
+
+    <script>
+        // Get the slider container and images
+        const slider = document.querySelector('.slider');
+        const images = slider.querySelectorAll('img');
+
+        // Set the animation speed ( pixels per second )
+        const speed = 5;
+
+        // Set the initial translateX value
+        let translateX = 0;
+
+        // Function to move the images
+        function moveImages() {
+        // Update the translateX value
+        translateX -= speed;
+
+        // Move the images to the left
+        images.forEach((image) => {
+            image.style.transform = `translateX(${translateX}px)`;
+        });
+
+        // Check if we've reached the beginning of the slider
+        if (translateX < -images[0].offsetWidth * (images.length - 1)) {
+            // Reset the translateX value to 0
+            translateX = 0;
+        }
+        }
+
+        // Call the moveImages function every 16ms ( approx. 60fps )
+        setInterval(moveImages, 16);
     </script>
 </body>
 </html>

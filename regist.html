@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <section id="questions" class="section_form">
+        <div class="container">
+            <h1 class="section_form_zag">Регистрация</h1>
+          
+            <input type="text" placeholder="Имя" required>
+            <input type="email" placeholder="Email" required>
+            <input type="password" placeholder="Пароль" required>
+            <button class="header_but" onclick="window.location.href='index.html'">
+                <a>Зарегистрироваться</a>
+              </button>
+          </div>
+    </section>
+
+    <style>
+/* Форма обратной связи */
+.section_form {
+    padding: 30px;
+    text-align: center;
+    margin-left: 30%;
+    margin-right: 30%;
+}
+
+.section_form_zag {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.section_form input,
+.section_form textarea {
+    width: 100%;
+    padding: 15px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.section_form textarea {
+    resize: vertical;
+    height: 100px;
+}
+
+.section_form_but {
+    background-color: #ff6600;
+    color: #fff;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+.section_form_but:hover {
+    background-color: #ff8000;
+}
+
+    </style>
+</body>
+</html>
